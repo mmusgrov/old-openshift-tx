@@ -1,0 +1,282 @@
+Cloning "https://github.com/mmusgrov/openshift-cases.git" ...
+	Commit:	94882acae8a9c0588a3077c6c05fb8151b7ef08f (add eap repo)
+	Author:	Michael Musgrove <michael.musgrove@gmail.com>
+	Date:	Mon Mar 12 17:12:25 2018 +0000
+Found pom.xml... attempting to build with 'mvn -e -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga package --batch-mode -Djava.net.preferIPv4Stack=true '
+Using MAVEN_OPTS '-XX:+UseParallelGC -XX:MinHeapFreeRatio=20 -XX:MaxHeapFreeRatio=40 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=100m -XX:+ExitOnOutOfMemoryError'
+Using Apache Maven 3.3.9 (Red Hat 3.3.9-2.8)
+Maven home: /opt/rh/rh-maven33/root/usr/share/maven
+Java version: 1.8.0_161, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "4.4.41-boot2docker", arch: "amd64", family: "unix"
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/bom/eap/jboss-javaee-6.0-with-tools/6.4.0.GA/jboss-javaee-6.0-with-tools-6.4.0.GA.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/bom/eap/jboss-javaee-6.0-with-tools/6.4.0.GA/jboss-javaee-6.0-with-tools-6.4.0.GA.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/bom/eap/jboss-javaee-6.0-with-tools/6.4.0.GA/jboss-javaee-6.0-with-tools-6.4.0.GA.pom (8 KB at 7.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/bom/eap/jboss-eap-bom-parent/6.4.0.GA/jboss-eap-bom-parent-6.4.0.GA.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/bom/eap/jboss-eap-bom-parent/6.4.0.GA/jboss-eap-bom-parent-6.4.0.GA.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/bom/eap/jboss-eap-bom-parent/6.4.0.GA/jboss-eap-bom-parent-6.4.0.GA.pom (7 KB at 30.2 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/jboss-javaee-6.0/3.0.2.Final-redhat-15/jboss-javaee-6.0-3.0.2.Final-redhat-15.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/jboss-javaee-6.0/3.0.2.Final-redhat-15/jboss-javaee-6.0-3.0.2.Final-redhat-15.pom (18 KB at 82.0 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/jboss-parent/14.0.0.redhat-1/jboss-parent-14.0.0.redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/jboss-parent/14.0.0.redhat-1/jboss-parent-14.0.0.redhat-1.pom (33 KB at 145.2 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.0.0/shrinkwrap-resolver-bom-2.0.0.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.0.0/shrinkwrap-resolver-bom-2.0.0.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.0.0/shrinkwrap-resolver-bom-2.0.0.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.0.0/shrinkwrap-resolver-bom-2.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.0.0/shrinkwrap-resolver-bom-2.0.0.pom (5 KB at 9.5 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/arquillian/arquillian-bom/1.1.0.Final/arquillian-bom-1.1.0.Final.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/arquillian/arquillian-bom/1.1.0.Final/arquillian-bom-1.1.0.Final.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/arquillian/arquillian-bom/1.1.0.Final/arquillian-bom-1.1.0.Final.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.0.Final/arquillian-bom-1.1.0.Final.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.0.Final/arquillian-bom-1.1.0.Final.pom (11 KB at 129.5 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/shrinkwrap/shrinkwrap-bom/1.1.2/shrinkwrap-bom-1.1.2.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/shrinkwrap/shrinkwrap-bom/1.1.2/shrinkwrap-bom-1.1.2.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/shrinkwrap/shrinkwrap-bom/1.1.2/shrinkwrap-bom-1.1.2.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.1.2/shrinkwrap-bom-1.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.1.2/shrinkwrap-bom-1.1.2.pom (4 KB at 46.6 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-3/shrinkwrap-descriptors-bom-2.0.0-alpha-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-3/shrinkwrap-descriptors-bom-2.0.0-alpha-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-3/shrinkwrap-descriptors-bom-2.0.0-alpha-3.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-3/shrinkwrap-descriptors-bom-2.0.0-alpha-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-3/shrinkwrap-descriptors-bom-2.0.0-alpha-3.pom (5 KB at 59.1 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/arquillian/extension/arquillian-drone-bom/1.1.1.Final/arquillian-drone-bom-1.1.1.Final.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/arquillian/extension/arquillian-drone-bom/1.1.1.Final/arquillian-drone-bom-1.1.1.Final.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/arquillian/extension/arquillian-drone-bom/1.1.1.Final/arquillian-drone-bom-1.1.1.Final.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-bom/1.1.1.Final/arquillian-drone-bom-1.1.1.Final.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/extension/arquillian-drone-bom/1.1.1.Final/arquillian-drone-bom-1.1.1.Final.pom (6 KB at 80.5 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/arquillian/selenium/selenium-bom/2.29.0/selenium-bom-2.29.0.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/arquillian/selenium/selenium-bom/2.29.0/selenium-bom-2.29.0.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/arquillian/selenium/selenium-bom/2.29.0/selenium-bom-2.29.0.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/arquillian/selenium/selenium-bom/2.29.0/selenium-bom-2.29.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/arquillian/selenium/selenium-bom/2.29.0/selenium-bom-2.29.0.pom (6 KB at 80.1 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/jboss-parent/9/jboss-parent-9.pom
+[INFO] Downloading: https://maven.repository.redhat.com/earlyaccess/all/org/jboss/jboss-parent/9/jboss-parent-9.pom
+[INFO] Downloading: https://maven.repository.redhat.com/techpreview/all/org/jboss/jboss-parent/9/jboss-parent-9.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/9/jboss-parent-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/9/jboss-parent-9.pom (28 KB at 290.5 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/as/jboss-as-ejb-client-bom/7.5.0.Final-redhat-21/jboss-as-ejb-client-bom-7.5.0.Final-redhat-21.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/as/jboss-as-ejb-client-bom/7.5.0.Final-redhat-21/jboss-as-ejb-client-bom-7.5.0.Final-redhat-21.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/as/jboss-as-ejb-client-bom/7.5.0.Final-redhat-21/jboss-as-ejb-client-bom-7.5.0.Final-redhat-21.pom (4 KB at 5.1 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/as/jboss-as-parent/7.5.0.Final-redhat-21/jboss-as-parent-7.5.0.Final-redhat-21.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/as/jboss-as-parent/7.5.0.Final-redhat-21/jboss-as-parent-7.5.0.Final-redhat-21.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/as/jboss-as-parent/7.5.0.Final-redhat-21/jboss-as-parent-7.5.0.Final-redhat-21.pom (307 KB at 1200.1 KB/sec)
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JBoss EAP - Greeter Client App 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8 KB at 44.3 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9 KB at 136.1 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 KB at 337.7 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/apache/11/apache-11.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/apache/11/apache-11.pom (15 KB at 249.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (29 KB at 443.5 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom (10 KB at 166.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom (11 KB at 195.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (32 KB at 530.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/apache/13/apache-13.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/apache/13/apache-13.pom (14 KB at 243.7 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar (42 KB at 687.6 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom (11 KB at 155.0 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom (14 KB at 210.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar (30 KB at 512.9 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.1.1/maven-war-plugin-2.1.1.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.1.1/maven-war-plugin-2.1.1.pom (7 KB at 103.9 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/18/maven-plugins-18.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/18/maven-plugins-18.pom (13 KB at 181.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 KB at 349.6 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom (15 KB at 243.0 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.1.1/maven-war-plugin-2.1.1.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.1.1/maven-war-plugin-2.1.1.jar (76 KB at 1096.1 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.pom (9 KB at 39.7 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/weld/weld-parent/21-redhat-1/weld-parent-21-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/weld/weld-parent/21-redhat-1/weld-parent-21-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/weld/weld-parent/21-redhat-1/weld-parent-21-redhat-1.pom (23 KB at 98.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/jboss-parent/11-redhat-1/jboss-parent-11-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/jboss-parent/11-redhat-1/jboss-parent-11-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/jboss-parent/11-redhat-1/jboss-parent-11-redhat-1.pom (31 KB at 132.0 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.pom (7 KB at 27.8 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.pom (7 KB at 28.5 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.pom (4 KB at 13.8 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jackson-provider/2.3.1.GA/resteasy-jackson-provider-2.3.1.GA.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jackson-provider/2.3.1.GA/resteasy-jackson-provider-2.3.1.GA.pom (4 KB at 14.8 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jaxrs-all/2.3.1.GA/resteasy-jaxrs-all-2.3.1.GA.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jaxrs-all/2.3.1.GA/resteasy-jaxrs-all-2.3.1.GA.pom (16 KB at 140.5 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.pom (7 KB at 29.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/com/github/lbroudoux/greeter/greeter-server/1.0.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading: https://repo1.maven.org/maven2/com/github/lbroudoux/greeter/greeter-server/1.0.0-SNAPSHOT/greeter-server-1.0.0-SNAPSHOT.pom
+[WARNING] The POM for com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT is missing, no dependency information available
+[INFO] Downloading: https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.pom (24 KB at 84.7 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 11.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2 KB at 30.6 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.pom (11 KB at 47.3 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.pom (4 KB at 13.5 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling-parent/1.4.10.Final-redhat-1/jboss-marshalling-parent-1.4.10.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-parent/1.4.10.Final-redhat-1/jboss-marshalling-parent-1.4.10.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-parent/1.4.10.Final-redhat-1/jboss-marshalling-parent-1.4.10.Final-redhat-1.pom (8 KB at 31.4 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.pom (9 KB at 40.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/xnio/xnio-all/3.0.13.GA-redhat-1/xnio-all-3.0.13.GA-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-all/3.0.13.GA-redhat-1/xnio-all-3.0.13.GA-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-all/3.0.13.GA-redhat-1/xnio-all-3.0.13.GA-redhat-1.pom (6 KB at 23.1 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.pom (11 KB at 45.3 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.pom (7 KB at 29.6 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.pom (6 KB at 25.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.pom (4 KB at 15.9 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.pom (8 KB at 24.3 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.pom
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.pom
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.pom (2 KB at 6.9 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jackson-provider/2.3.1.GA/resteasy-jackson-provider-2.3.1.GA.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/com/github/lbroudoux/greeter/greeter-server/1.0.0-SNAPSHOT/greeter-server-1.0.0-SNAPSHOT-interface.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jackson-provider/2.3.1.GA/resteasy-jackson-provider-2.3.1.GA.jar (5 KB at 17.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (44 KB at 87.2 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.jar
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.jar
+[INFO] Downloaded: https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar (308 KB at 546.3 KB/sec)
+[INFO] Downloading: https://repo1.maven.org/maven2/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.jar
+[INFO] Downloading: https://maven.repository.redhat.com/ga/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.jar
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloading: https://maven.repository.redhat.com/ga/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.jar
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.1.Final-redhat-3/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar (19 KB at 74.8 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/javax/inject/javax.inject/1.0.0.redhat-5/javax.inject-1.0.0.redhat-5.jar (6 KB at 22.0 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/javax/enterprise/cdi-api/1.0.0.SP4-redhat-5/cdi-api-1.0.0.SP4-redhat-5.jar (53 KB at 190.6 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling/1.4.10.Final-redhat-1/jboss-marshalling-1.4.10.Final-redhat-1.jar (214 KB at 431.8 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-3/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar (26 KB at 27.8 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/jboss-ejb-client/1.0.30.Final-redhat-1/jboss-ejb-client-1.0.30.Final-redhat-1.jar (332 KB at 362.8 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/logging/jboss-logging/3.1.4.GA-redhat-2/jboss-logging-3.1.4.GA-redhat-2.jar (57 KB at 57.1 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-nio/3.0.13.GA-redhat-1/xnio-nio-3.0.13.GA-redhat-1.jar (83 KB at 64.8 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ejb/jboss-ejb-api_3.1_spec/1.0.2.Final-redhat-3/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar (51 KB at 38.8 KB/sec)
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_1.1_spec/1.0.1.Final-redhat-3/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar (47 KB at 36.2 KB/sec)
+[INFO] Downloading: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.jar
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/xnio/xnio-api/3.0.13.GA-redhat-1/xnio-api-3.0.13.GA-redhat-1.jar (235 KB at 180.5 KB/sec)
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/sasl/jboss-sasl/1.0.5.Final-redhat-1/jboss-sasl-1.0.5.Final-redhat-1.jar (92 KB at 67.3 KB/sec)
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/remoting3/jboss-remoting/3.3.4.Final-redhat-1/jboss-remoting-3.3.4.Final-redhat-1.jar (273 KB at 197.5 KB/sec)
+[INFO] Downloaded: https://maven.repository.redhat.com/ga/org/jboss/marshalling/jboss-marshalling-river/1.4.10.Final-redhat-1/jboss-marshalling-river-1.4.10.Final-redhat-1.jar (81 KB at 49.8 KB/sec)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 26.591 s
+[INFO] Finished at: 2018-03-12T18:05:03+00:00
+[INFO] Final Memory: 10M/40M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "openshift" could not be activated because it does not exist.
+[ERROR] Failed to execute goal on project greeter-client: Could not resolve dependencies for project com.github.lbroudoux.greeter:greeter-client:war:1.0.0-SNAPSHOT: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2) -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal on project greeter-client: Could not resolve dependencies for project com.github.lbroudoux.greeter:greeter-client:war:1.0.0-SNAPSHOT: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2)
+at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies(LifecycleDependencyResolver.java:221)
+at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.resolveProjectDependencies(LifecycleDependencyResolver.java:127)
+at org.apache.maven.lifecycle.internal.MojoExecutor.ensureDependenciesAreResolved(MojoExecutor.java:245)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:199)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.project.DependencyResolutionException: Could not resolve dependencies for project com.github.lbroudoux.greeter:greeter-client:war:1.0.0-SNAPSHOT: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2)
+at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve(DefaultProjectDependenciesResolver.java:211)
+at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies(LifecycleDependencyResolver.java:195)
+... 23 more
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2)
+at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:384)
+at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve(DefaultProjectDependenciesResolver.java:205)
+... 24 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2)
+at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:444)
+at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:246)
+at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:367)
+... 25 more
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact com.github.lbroudoux.greeter:greeter-server:jar:interface:1.0.0-SNAPSHOT in central (https://repo1.maven.org/maven2)
+at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:39)
+at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+at java.lang.Thread.run(Thread.java:748)
+[ERROR]
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+Aborting due to error code 1 from Maven build
+error: build error: non-zero (13) exit code from registry.access.redhat.com/jboss-eap-6/eap64-openshift@sha256:85c725177950bab06193471102c837757ece5275cc368c37f5bb6972747e4693
