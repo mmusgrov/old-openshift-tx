@@ -50,6 +50,8 @@ public class GreeterResource {
             }
             // Invoke remote Greeter EJB.
             response = greeter.greet(name);
+            int status = greeter.transactionStatus();
+            response = response + " status: " + status;
         } catch (Throwable t) {
             // Put some diagnostic traces...
             log.log(Level.WARNING, "Error: " + t.getMessage());
@@ -67,7 +69,7 @@ public class GreeterResource {
         int status = -1;
 
         try {
-            status = getTransactionalBean().transactionStatus();
+            status = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName()).transactionStatus();
         } catch (Throwable t) {
             log.log(Level.WARNING, "Error: " + t.getMessage());
             t.printStackTrace();
@@ -78,13 +80,13 @@ public class GreeterResource {
         return "{\"response\":\"" + status + "\"}";
     }
 
-    private TransactionalRemote getTransactionalBean() throws NamingException {
+    private TransactionalRemote getTransactionalBean(String beanName, String remoteName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
             properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
             javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
             // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
-            Object obj = jndiContext.lookup("ejb:/greeter-server//TransactionalBean!" + TransactionalRemote.class.getCanonicalName());
+            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + remoteName);
             //com.github.lbroudoux.greeter.server.TransactionalRemote");
             log.log(Level.INFO, "Lookup object class: " + obj.getClass());
             transactionalBean = (TransactionalRemote)obj;
