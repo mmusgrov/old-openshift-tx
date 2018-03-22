@@ -43,7 +43,8 @@ public class GreeterResource {
                 Hashtable properties = new Hashtable();
                 properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
                 javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
-                Object obj = jndiContext.lookup("ejb:/greeter-server//GreeterBean!com.github.lbroudoux.greeter.server.Greeter");
+                Object obj = jndiContext.lookup("ejb:/greeter-server//GreeterBean!" + Greeter.class.getCanonicalName());
+                //com.github.lbroudoux.greeter.server.Greeter");
                 log.log(Level.INFO, "Lookup object class: " + obj.getClass());
                 greeter  = (Greeter)obj;
             }
@@ -82,7 +83,9 @@ public class GreeterResource {
             Hashtable properties = new Hashtable();
             properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
             javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
-            Object obj = jndiContext.lookup("ejb:/greeter-server//TransactionalBean!com.github.lbroudoux.greeter.server.TransactionalRemote");
+            // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
+            Object obj = jndiContext.lookup("ejb:/greeter-server//TransactionalBean!" + TransactionalRemote.class.getCanonicalName());
+            //com.github.lbroudoux.greeter.server.TransactionalRemote");
             log.log(Level.INFO, "Lookup object class: " + obj.getClass());
             transactionalBean = (TransactionalRemote)obj;
         }
