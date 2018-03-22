@@ -6,5 +6,5 @@ public interface Greeter {
     String greet(String user);
 
     String setName(String name);
-    String transactionStatus() throws RemoteException;
+    int transactionStatus() throws RemoteException;
 }
