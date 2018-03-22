@@ -83,10 +83,12 @@ public class GreeterResource {
         String message;
 
         try {
+            userTransaction.begin();
+
             TransactionalRemote bean = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName());
 
 //            assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
-            userTransaction.begin();
+//            userTransaction.begin();
             try {
                 log.log(Level.INFO, "basicTransactionPropagationTest: asserting Status.STATUS_ACTIVE%n");
 
