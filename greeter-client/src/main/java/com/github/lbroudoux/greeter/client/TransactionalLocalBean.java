@@ -2,10 +2,8 @@ package com.github.lbroudoux.greeter.client;
 
 import com.github.lbroudoux.greeter.server.TransactionalRemote;
 import com.github.lbroudoux.greeter.server.TransactionalStatefulRemote;
-import org.omg.CORBA.SystemException;
 
 import javax.annotation.Resource;
-import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -13,10 +11,9 @@ import javax.ejb.TransactionAttributeType;
 import javax.naming.NamingException;
 import javax.transaction.NotSupportedException;
 import javax.transaction.Status;
+import javax.transaction.SystemException;
 import javax.transaction.TransactionSynchronizationRegistry;
 import javax.transaction.UserTransaction;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.core.Context;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.rmi.RemoteException;
@@ -32,10 +29,8 @@ public class TransactionalLocalBean implements TransactionalLocal {
     @Resource
     private UserTransaction userTransaction;
 
-    @EJB
     private TransactionalRemote transactionalBean;
 
-    @EJB
     private TransactionalStatefulRemote statefulEJB;
 
     @Resource
@@ -44,11 +39,11 @@ public class TransactionalLocalBean implements TransactionalLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public String transactionStatus() {
-
             String message;
 
             try {
-                TransactionalRemote bean = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName());
+                TransactionalRemote bean = getTransactionalBean(
+                        "TransactionalBean", TransactionalRemote.class.getCanonicalName());
 
                 assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
                 userTransaction.begin();
@@ -61,7 +56,7 @@ public class TransactionalLocalBean implements TransactionalLocal {
                     message = "status ok, rolled back";
                 }
             } catch (RemoteException | NotSupportedException | SystemException | IllegalStateException |
-                    SecurityException | NamingException | javax.transaction.SystemException e) {
+                    SecurityException | NamingException e) {
                 StringWriter sw = new StringWriter();
                 e.printStackTrace(new PrintWriter(sw));
                 message = sw.toString();
@@ -88,7 +83,7 @@ public class TransactionalLocalBean implements TransactionalLocal {
                 message = "success";
             }
         } catch (NotSupportedException | SystemException | RemoteException | IllegalStateException | SecurityException
-                | NamingException | javax.transaction.SystemException e) {
+                | NamingException e) {
             StringWriter sw = new StringWriter();
             e.printStackTrace(new PrintWriter(sw));
             message = sw.toString();

@@ -4,7 +4,6 @@ import javax.ejb.EJB;
 import javax.transaction.NotSupportedException;
 import javax.transaction.Status;
 import javax.transaction.UserTransaction;
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
 import javax.ws.rs.GET;
@@ -33,7 +32,6 @@ import static com.github.lbroudoux.greeter.client.TransactionalLocalBean.stringF
  * A JAX-RS resource for exposing REST endpoints for Greeter manipulation
  */
 @Stateless
-//@TransactionalLocalBean
 @ApplicationScoped
 @Path("greeter")
 public class GreeterResource {
@@ -100,7 +98,7 @@ public class GreeterResource {
     }
 
     @GET
-    @Path("status/{name}")
+    @Path("xxxstatus/{name}")
     @Produces({"application/json"})
     public String xxtxGreet(@Context SecurityContext context, @PathParam("name") String name) {
         log.log(Level.INFO, "Getting new greet request for " + name);
