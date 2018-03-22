@@ -110,7 +110,7 @@ public class GreeterResource {
 //        if (userTransaction.getStatus() != Status.STATUS_NO_TRANSACTION)
         try {
             userTransaction.rollback();
-        } catch (javax.transaction.SystemException e) {
+        } catch (Throwable e) {
         }
 
     }
