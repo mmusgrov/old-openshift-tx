@@ -17,7 +17,7 @@ Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.lbroudoux.greeter</groupId>
+  <groupId>com.redhat.xpaas.eap.deployments</groupId>
   <version>1.0.0-SNAPSHOT</version>
   <artifactId>txn-ejb-on-openshift</artifactId>
   <packaging>pom</packaging>
@@ -26,7 +26,7 @@ Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
   <url>http://www.jboss.org/jbosstm</url>
  
   <modules>
-    <module>greeter-server</module>
-    <module>greeter-client</module>
+    <module>tx-server</module>
+    <module>tx-client</module>
   </modules>
 </project>
