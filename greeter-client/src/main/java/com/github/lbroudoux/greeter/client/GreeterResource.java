@@ -1,5 +1,6 @@
 package com.github.lbroudoux.greeter.client;
 
+import javax.ejb.EJB;
 import javax.transaction.NotSupportedException;
 import javax.transaction.Status;
 import javax.transaction.UserTransaction;
@@ -26,16 +27,21 @@ import com.github.lbroudoux.greeter.server.Greeter;
 import com.github.lbroudoux.greeter.server.TransactionalRemote;
 import org.omg.CORBA.SystemException;
 
+import static com.github.lbroudoux.greeter.client.TransactionalLocalBean.stringForm;
+
 /**
  * A JAX-RS resource for exposing REST endpoints for Greeter manipulation
  */
 @Stateless
-//@LocalBean
+//@TransactionalLocalBean
 @ApplicationScoped
 @Path("greeter")
 public class GreeterResource {
 
     private static Logger log = Logger.getLogger(GreeterResource.class.getName());
+
+    @EJB
+    private TransactionalLocalBean localBean;
 
     private Greeter greeter;
     private TransactionalRemote transactionalBean;
@@ -79,6 +85,15 @@ public class GreeterResource {
     @Path("status/{name}")
     @Produces({"application/json"})
     public String txGreet(@Context SecurityContext context, @PathParam("name") String name) {
+        String message = localBean.transactionStatus();
+        
+        return "{\"response\":\"" + message + "\"}";
+    }
+
+    @GET
+    @Path("status/{name}")
+    @Produces({"application/json"})
+    public String xxtxGreet(@Context SecurityContext context, @PathParam("name") String name) {
         log.log(Level.INFO, "Getting new greet request for " + name);
         String message;
 
