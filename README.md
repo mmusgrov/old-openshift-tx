@@ -5,7 +5,7 @@
  cat ~/.minishift/config/config.json
  minishift start
  eval $(minishift oc-env)
- oc login -u developer -p developer
+ oc login -u developer -p developer # or oc login -u system:admin 
  oc project ejb-xa
  minishift docker-env
  eval $(minishift docker-env)
