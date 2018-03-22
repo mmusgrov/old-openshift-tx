@@ -32,8 +32,10 @@ public class TransactionalLocalBean implements TransactionalLocal {
     @Resource
     private UserTransaction userTransaction;
 
+    @EJB
     private TransactionalRemote transactionalBean;
 
+    @EJB
     private TransactionalStatefulRemote statefulEJB;
 
     @Resource
