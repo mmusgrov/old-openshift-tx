@@ -30,9 +30,9 @@ public class GreeterBean implements Greeter {
 
   @Override
   @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-  public int transactionStatus() throws RemoteException {
-    int status = transactionSynchronizationRegistry.getTransactionStatus();
-    System.out.printf("TransactionalStatelessBean:transactionStatus: %d%n", status);
-    return status;
+  public String transactionStatus() throws RemoteException {
+      int status = transactionSynchronizationRegistry.getTransactionStatus();
+      System.out.printf("TransactionalStatelessBean:transactionStatus: %d%n", status);
+      return TransactionalBean.stringForm(status);
   }
 }

@@ -50,7 +50,8 @@ public class GreeterResource {
             }
             // Invoke remote Greeter EJB.
             response = greeter.greet(name);
-            int status = greeter.transactionStatus();
+            String status = greeter.transactionStatus();
+
             response = response + " status: " + status;
         } catch (Throwable t) {
             // Put some diagnostic traces...
@@ -66,7 +67,7 @@ public class GreeterResource {
     @Produces({"application/json"})
     public String txGreet(@Context SecurityContext context, @PathParam("name") String name) {
         log.log(Level.INFO, "Getting new greet request for " + name);
-        int status = -1;
+        String status = "";
 
         try {
             status = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName()).transactionStatus();

@@ -3,8 +3,8 @@ package com.github.lbroudoux.greeter.server;
 import java.rmi.RemoteException;
 
 public interface Greeter {
-  String greet(String user);
+    String greet(String user);
 
-  String setName(String name);
-  int transactionStatus() throws RemoteException;
+    String setName(String name);
+    String transactionStatus() throws RemoteException;
 }
