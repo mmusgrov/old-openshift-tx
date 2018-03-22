@@ -4,4 +4,5 @@ import java.rmi.RemoteException;
 
 public interface TransactionalLocal {
     String transactionStatus();
+    String testSameTransactionEachCall();
 }

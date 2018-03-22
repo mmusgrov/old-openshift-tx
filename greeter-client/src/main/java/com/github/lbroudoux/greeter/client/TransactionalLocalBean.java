@@ -1,6 +1,7 @@
 package com.github.lbroudoux.greeter.client;
 
 import com.github.lbroudoux.greeter.server.TransactionalRemote;
+import com.github.lbroudoux.greeter.server.TransactionalStatefulRemote;
 import org.omg.CORBA.SystemException;
 
 import javax.annotation.Resource;
@@ -32,6 +33,8 @@ public class TransactionalLocalBean implements TransactionalLocal {
     private UserTransaction userTransaction;
 
     private TransactionalRemote transactionalBean;
+
+    private TransactionalStatefulRemote statefulEJB;
 
     @Resource
     private TransactionSynchronizationRegistry transactionSynchronizationRegistry;
@@ -65,6 +68,33 @@ public class TransactionalLocalBean implements TransactionalLocal {
             return "{\"response\":\"" + message + "\"}";
     }
 
+    @Override
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    public String testSameTransactionEachCall() {
+        String message;
+
+        try {
+            TransactionalStatefulRemote bean = getTransactionalStatefulBean(
+                    "TransactionalStatefulBean", TransactionalStatefulRemote.class.getCanonicalName());
+
+            userTransaction.begin();
+            try {
+                bean.sameTransaction(true);
+                bean.sameTransaction(false);
+            } finally {
+                userTransaction.rollback();
+                message = "success";
+            }
+        } catch (NotSupportedException | SystemException | RemoteException | IllegalStateException | SecurityException
+                | NamingException | javax.transaction.SystemException e) {
+            StringWriter sw = new StringWriter();
+            e.printStackTrace(new PrintWriter(sw));
+            message = sw.toString();
+        }
+
+        return "{\"response\":\"" + message + "\"}";
+    }
+
     private TransactionalRemote getTransactionalBean(String beanName, String remoteName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
@@ -78,6 +108,21 @@ public class TransactionalLocalBean implements TransactionalLocal {
         }
 
         return transactionalBean;
+    }
+
+    private TransactionalStatefulRemote getTransactionalStatefulBean(String beanName, String remoteName) throws NamingException {
+        if (statefulEJB == null) {
+            Hashtable properties = new Hashtable();
+            properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
+            javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
+            // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
+            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + remoteName);
+            //com.github.lbroudoux.greeter.server.TransactionalRemote");
+            log.log(Level.INFO, "Lookup object class: " + obj.getClass());
+            statefulEJB = (TransactionalStatefulRemote)obj;
+        }
+
+        return statefulEJB;
     }
 
     public static String stringForm (int status) {

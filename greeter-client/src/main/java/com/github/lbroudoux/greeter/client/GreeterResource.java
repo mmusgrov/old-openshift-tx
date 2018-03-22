@@ -91,6 +91,15 @@ public class GreeterResource {
     }
 
     @GET
+    @Path("stateful/{name}")
+    @Produces({"application/json"})
+    public String testSameTransactionEachCall(@Context SecurityContext context, @PathParam("name") String name) {
+        String message = localBean.testSameTransactionEachCall();
+
+        return "{\"response\":\"" + message + "\"}";
+    }
+
+    @GET
     @Path("status/{name}")
     @Produces({"application/json"})
     public String xxtxGreet(@Context SecurityContext context, @PathParam("name") String name) {
