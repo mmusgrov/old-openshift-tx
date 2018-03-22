@@ -41,7 +41,7 @@ public class GreeterResource {
     private static Logger log = Logger.getLogger(GreeterResource.class.getName());
 
     @EJB
-    private TransactionalLocalBean localBean;
+    private TransactionalLocal localBean;
 
     private Greeter greeter;
     private TransactionalRemote transactionalBean;
@@ -86,7 +86,7 @@ public class GreeterResource {
     @Produces({"application/json"})
     public String txGreet(@Context SecurityContext context, @PathParam("name") String name) {
         String message = localBean.transactionStatus();
-        
+
         return "{\"response\":\"" + message + "\"}";
     }
 
