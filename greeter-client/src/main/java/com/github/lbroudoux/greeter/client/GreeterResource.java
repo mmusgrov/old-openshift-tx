@@ -83,12 +83,11 @@ public class GreeterResource {
         String message;
 
         try {
-            userTransaction.begin();
-
+            cleanThread();
             TransactionalRemote bean = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName());
 
-//            assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
-//            userTransaction.begin();
+            assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
+            userTransaction.begin();
             try {
                 log.log(Level.INFO, "basicTransactionPropagationTest: asserting Status.STATUS_ACTIVE%n");
 
@@ -107,6 +106,14 @@ public class GreeterResource {
         return "{\"response\":\"" + message + "\"}";
     }
 
+    private void cleanThread() {
+//        if (userTransaction.getStatus() != Status.STATUS_NO_TRANSACTION)
+        try {
+            userTransaction.rollback();
+        } catch (javax.transaction.SystemException e) {
+        }
+
+    }
     private TransactionalRemote getTransactionalBean(String beanName, String remoteName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
