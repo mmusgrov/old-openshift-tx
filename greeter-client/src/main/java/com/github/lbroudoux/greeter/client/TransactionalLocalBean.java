@@ -92,13 +92,13 @@ public class TransactionalLocalBean implements TransactionalLocal {
         return "{\"response\":\"" + message + "\"}";
     }
 
-    private TransactionalRemote getTransactionalBean(String beanName, String remoteName) throws NamingException {
+    private TransactionalRemote getTransactionalBean(String beanName, String viewClassName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
             properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
             javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
             // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
-            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + remoteName);
+            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + viewClassName);
             //com.github.lbroudoux.greeter.server.TransactionalRemote");
             log.log(Level.INFO, "Lookup object class: " + obj.getClass());
             transactionalBean = (TransactionalRemote)obj;
@@ -107,13 +107,14 @@ public class TransactionalLocalBean implements TransactionalLocal {
         return transactionalBean;
     }
 
-    private TransactionalStatefulRemote getTransactionalStatefulBean(String beanName, String remoteName) throws NamingException {
+    private TransactionalStatefulRemote getTransactionalStatefulBean(String beanName, String viewClassName) throws NamingException {
         if (statefulEJB == null) {
             Hashtable properties = new Hashtable();
             properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
             javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
             // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
-            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + remoteName);
+            // context.lookup("ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName + "?stateful");
+            Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + viewClassName + "?stateful");
             //com.github.lbroudoux.greeter.server.TransactionalRemote");
             log.log(Level.INFO, "Lookup object class: " + obj.getClass());
             statefulEJB = (TransactionalStatefulRemote)obj;
