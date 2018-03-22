@@ -6,15 +6,4 @@
           <remoting-ejb-receiver outbound-connection-ref="remote-greeting-ejb-connection"/>
       </ejb-receivers>
   </client-context>
-
-  <!--
-  <clusters>
-    <cluster name="ejb" security-realm="remote-greeting-ejb-security-realm" username="ejb">
-      <connection-creation-options>
-        <property name="org.xnio.Options.SSL_ENABLED" value="false" />
-        <property name="org.xnio.Options.SASL_POLICY_NOANONYMOUS" value="false" />
-      </connection-creation-options>
-    </cluster>
-  </clusters>
-  -->
 </jboss-ejb-client>

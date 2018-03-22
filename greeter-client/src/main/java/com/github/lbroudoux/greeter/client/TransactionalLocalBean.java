@@ -1,6 +1,6 @@
 package com.github.lbroudoux.greeter.client;
 
-import com.github.lbroudoux.greeter.server.TransactionalRemote;
+import com.github.lbroudoux.greeter.server.StatelessRemote;
 import com.github.lbroudoux.greeter.server.TransactionalStatefulRemote;
 
 import javax.annotation.Resource;
@@ -18,18 +18,14 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.rmi.RemoteException;
 import java.util.Hashtable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Stateless
 @Remote (TransactionalLocal.class)
 public class TransactionalLocalBean implements TransactionalLocal {
-    private static Logger log = Logger.getLogger(GreeterResource.class.getName());
-
     @Resource
     private UserTransaction userTransaction;
 
-    private TransactionalRemote transactionalBean;
+    private StatelessRemote transactionalBean;
 
     private TransactionalStatefulRemote statefulEJB;
 
@@ -42,14 +38,12 @@ public class TransactionalLocalBean implements TransactionalLocal {
             String message;
 
             try {
-                TransactionalRemote bean = getTransactionalBean(
-                        "TransactionalBean", TransactionalRemote.class.getCanonicalName());
+                StatelessRemote bean = getTransactionalBean(
+                        "StatelessBean", StatelessRemote.class.getCanonicalName());
 
                 assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
                 userTransaction.begin();
                 try {
-                    log.log(Level.INFO, "basicTransactionPropagationTest: asserting Status.STATUS_ACTIVE%n");
-
                     assert Status.STATUS_ACTIVE == bean.transactionStatus() : "Active transaction expected!";
                 } finally {
                     userTransaction.rollback();
@@ -92,16 +86,16 @@ public class TransactionalLocalBean implements TransactionalLocal {
         return "{\"response\":\"" + message + "\"}";
     }
 
-    private TransactionalRemote getTransactionalBean(String beanName, String viewClassName) throws NamingException {
+    private StatelessRemote getTransactionalBean(String beanName, String viewClassName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
             properties.put(javax.naming.Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
             javax.naming.Context jndiContext = new javax.naming.InitialContext(properties);
             // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
             Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + viewClassName);
-            //com.github.lbroudoux.greeter.server.TransactionalRemote");
-            log.log(Level.INFO, "Lookup object class: " + obj.getClass());
-            transactionalBean = (TransactionalRemote)obj;
+            //com.github.lbroudoux.greeter.server.StatelessRemote");
+
+            transactionalBean = (StatelessRemote)obj;
         }
 
         return transactionalBean;
@@ -115,8 +109,8 @@ public class TransactionalLocalBean implements TransactionalLocal {
             // "ejb:myapp/myejbmodule//FooBean!org.myapp.ejb.Foo"
             // context.lookup("ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName + "?stateful");
             Object obj = jndiContext.lookup("ejb:/greeter-server//" + beanName + "!" + viewClassName + "?stateful");
-            //com.github.lbroudoux.greeter.server.TransactionalRemote");
-            log.log(Level.INFO, "Lookup object class: " + obj.getClass());
+            //com.github.lbroudoux.greeter.server.StatelessRemote");
+
             statefulEJB = (TransactionalStatefulRemote)obj;
         }
 
