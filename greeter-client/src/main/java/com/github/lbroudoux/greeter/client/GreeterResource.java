@@ -30,7 +30,7 @@ import org.omg.CORBA.SystemException;
  * A JAX-RS resource for exposing REST endpoints for Greeter manipulation
  */
 @Stateless
-@LocalBean
+//@LocalBean
 @ApplicationScoped
 @Path("greeter")
 public class GreeterResource {
@@ -83,7 +83,7 @@ public class GreeterResource {
         String message;
 
         try {
-            cleanThread();
+            checkThread();
             TransactionalRemote bean = getTransactionalBean("TransactionalBean", TransactionalRemote.class.getCanonicalName());
 
             assert Status.STATUS_NO_TRANSACTION == bean.transactionStatus() : "No transaction expected!";
@@ -106,14 +106,14 @@ public class GreeterResource {
         return "{\"response\":\"" + message + "\"}";
     }
 
-    private void cleanThread() {
+    private void checkThread() {
 //        if (userTransaction.getStatus() != Status.STATUS_NO_TRANSACTION)
         try {
-            userTransaction.rollback();
+            log.log(Level.INFO, "UserTransaction status: " + stringForm(userTransaction.getStatus()));
         } catch (Throwable e) {
         }
-
     }
+
     private TransactionalRemote getTransactionalBean(String beanName, String remoteName) throws NamingException {
         if (transactionalBean == null) {
             Hashtable properties = new Hashtable();
